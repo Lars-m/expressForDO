@@ -5,12 +5,12 @@
     "watch"       : true,
     "env": {
       "NODE_ENV": "development",
-      "IP" : "0.0.0.0.",
+      "IP" : "0.0.0.0",
       "PORT": 80
     },
     "env_production" : {
       "NODE_ENV": "production",
-      "IP" : "0.0.0.0.",
+      "IP" : "0.0.0.0",
       "PORT" : 80
     }
   }]
