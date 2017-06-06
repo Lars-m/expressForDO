@@ -96,6 +96,10 @@ router.post('/geoapi', function(req, res) {
   res.json(result);
 });
 
+router.get("/geoapi/allowedarea",(req,res)=>{
+  res.json(polygon);
+});
+
 
 
 module.exports = router;
