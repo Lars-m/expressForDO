@@ -85,6 +85,13 @@ const featureCollection = {
 
 const polygon = featureCollection.features[0].geometry;
 
+//Create a new polygon meant to be used on clients my airbnb's MapView which
+//requres an object as the one we create below (note how we swap lon, lat values)
+polygonForClient = {};
+polygonForClient.coordinates = polygon.coordinates[0].map(point => {
+  return {latitude: point[1],longitude: point[0]}
+})
+
 router.post('/geoapi', function(req, res) {
   const location = req.body;
   let isInside = gju.pointInPolygon(location,polygon);
@@ -97,7 +104,7 @@ router.post('/geoapi', function(req, res) {
 });
 
 router.get("/geoapi/allowedarea",(req,res)=>{
-  res.json(polygon);
+  res.json(polygonForClient);
 });
 
 
