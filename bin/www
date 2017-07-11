@@ -16,6 +16,11 @@ var port = normalizePort(process.env.PORT || '3000');
 var ip = process.env.IP || "localhost";
 app.set('port', port);
 
+if(process.env.IP) {
+  console.log("Runnig on DO");
+  console.log("Binds to: "+process.env.IP);
+}
+
 /**
  * Create HTTP server.
  */
